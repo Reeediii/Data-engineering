@@ -16,8 +16,6 @@ def load_data_from_api(api_url: str, num_of_items: int = 10) -> list[dict]:
     """
     items = []
     
-    # Для CoinGecko API мы можем запросить несколько монет за один запрос
-    # Используем параметры per_page для ограничения количества результатов
     params = {
         'vs_currency': 'usd',
         'per_page': num_of_items,
