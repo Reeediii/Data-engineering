@@ -16,27 +16,27 @@ def load_data_from_api(api_url: str, num_of_items: int = 10) -> list[dict]:
     """
     items = []
     
-    params = {
+params = {
         'vs_currency': 'usd',
         'per_page': num_of_items,
         'page': 1
     }
     
-    response = requests.get(
+response = requests.get(
         api_url,
         params=params,
         headers={"Content-Type": "application/json"},
     )
     
-    if response.status_code == 200:
+if response.status_code == 200:
         items = response.json()
         print(f"Successfully loaded {len(items)} items")
     else:
-        msg = f"ERROR! Status code is {response.status_code}. Message: {response.text}"
-        print(msg)
-        raise Exception(msg)
+     msg = f"ERROR! Status code is {response.status_code}. Message: {response.text}"
+    print(msg)
+    raise Exception(msg)
 
-    return items
+return items
 
 
 def convert_to_df_and_save(
@@ -48,15 +48,14 @@ def convert_to_df_and_save(
         df.to_csv(fname, index=False)
         return df
 
-    return None
+return None
 
 
 def main():
     coins = load_data_from_api(API_URL, 50)
     result = convert_to_df_and_save(coins, OUTPUT_FILENAME)
-
-    print(result.info())
-    print(result["name"].head(10))
+ print(result.info())
+ print(result["name"].head(10))
 
 
 if __name__ == "__main__":
