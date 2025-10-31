@@ -68,3 +68,4 @@ python main.py --load        # Только загрузка в БД
 ```
 # Вспомогательные файлы:
 requirements.txt - Список зависимостей Python
+.gitignore
