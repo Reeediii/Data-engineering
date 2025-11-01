@@ -19,6 +19,12 @@ https://nbviewer.org/github/Reeediii/Data-engineering/blob/main/notebooks/EDA.ip
 ```bash
 # Установка необходимых библиотек
 pip install pandas numpy seaborn matplotlib jupyter
-
+```
+### Запуск ноутбука
+Скачать файл EDA.ipynb и переместить его в папку окружения с установленными зависимостями
+Ввести указанную команду
+```
+jupyter notebook EDA.ipynb
+```
 
 
